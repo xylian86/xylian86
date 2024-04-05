@@ -1,4 +1,4 @@
-name: Metrics
+name: my intro
 on:
   # Schedule updates (each hour)
   schedule: [{cron: "0 * * * *"}]
@@ -7,17 +7,17 @@ on:
   # Run workflow when pushing on master/main
   push: {branches: ["master"]}
 jobs:
-  metrics-main:
-    runs-on: ubuntu-latest
-    steps:
-      # See action.yml for all options
-      - uses: lowlighter/metrics@master
-        with:
-          # Your GitHub token
-          filename: metrics-main.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: header, activity, community, repositories, metadata
-          template: classic
+  # metrics-main:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # See action.yml for all options
+  #     - uses: lowlighter/metrics@master
+  #       with:
+  #         # Your GitHub token
+  #         filename: metrics-main.svg
+  #         token: ${{ secrets.METRICS_TOKEN }}
+  #         base: header, activity, community, repositories, metadata
+  #         template: classic
 
   update-readme:
     runs-on: ubuntu-latest
